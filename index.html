@@ -43,12 +43,10 @@
                 </div>
                 <nav class="main-nav" id="main-nav">
                     <ul class="nav-list">
-                        <li class="nav-item"><a href="about.html">about</a></li>
-                        <li class="nav-item"><a href="servizi.html">servizi</a></li>
-                        <li class="nav-item"><a href="portfolio.html">portfolio</a></li>
-                        <li class="nav-item"><a href="contatti.html">contatti</a></li>
-                        <li class="nav-item"><a class="menu-icon" href="javascript:void(0);" onclick="openMenu()"><i
-                                    class="fa fa-bars"></i></a></li>
+                        <li class="nav-item"><a href="#about" class="scrollLink">about</a></li>
+                        <li class="nav-item"><a href="#services" class="scrollLink">servizi</a></li>
+                        <li class="nav-item"><a href="#portfolio" class="scrollLink">portfolio</a></li>
+                        <li class="nav-item"><a href="#contact" class="scrollLink">contatti</a></li>
                     </ul>
                 </nav>
             </div>
@@ -83,7 +81,7 @@
             </div>
         </main>
         
-        <section class="presentation">
+        <section class="presentation" id="about">
             <div class="container">
                 <img class="my-image" src="img/my-image.jpg">
                 <div class="presentation-text">
@@ -107,7 +105,7 @@
                 </div>
             </div>
         </section>
-        <section class="services">
+        <section class="services" id="services">
             <h2 class="services-title">I miei servizi</h2>
             <div class="container">
                 <div class="service" data-aos="fade-right" data-aos-duration="2000"  data-aos-offset="100">
@@ -170,39 +168,39 @@
                 </div>
             </div>
         </section>
-        <section class="portfolio">
+        <section class="portfolio" id="portfolio">
             <h2 class="portfolio-title">Portfolio</h2>
             <div class="container">
-                <div class="portfolio-item" data-aos="flip-left" data-aos-duration="2000" data-aos-delay="0" data-aos-offset="200">
+                <div class="portfolio-item">
                     <a href="img/indelux-logo-portfolio.jpg"><img src="img/indelux-logo-portfolio-small.jpg" alt=""></a>
                 </div>
-                <div class="portfolio-item" data-aos="flip-left" data-aos-duration="2000" data-aos-delay="200" data-aos-offset="200">
+                <div class="portfolio-item" >
                     <a href="img/mycheck-logo-portfolio.jpg"><img src="img/mycheck-logo-portfolio-small.jpg"></a>
                 </div>
-                <div class="portfolio-item" data-aos="flip-left" data-aos-duration="2000" data-aos-delay="400" data-aos-offset="200">
+                <div class="portfolio-item">
                     <a href="img/olivia-epoupa-logo-portfolio.jpg"><img src="img/olivia-epoupa-logo-portfolio-small.jpg"></a>
                 </div>
-                <div class="portfolio-item" data-aos="flip-left" data-aos-duration="2000" data-aos-delay="600" data-aos-offset="200">
+                <div class="portfolio-item">
                     <a href="img/rebirth-logo-portfolio.jpg"><img src="img/rebirth-logo-portfolio-small.jpg"></a>
                 </div>
-                <div class="portfolio-item" data-aos="flip-left" data-aos-duration="2000" data-aos-delay="800" data-aos-offset="200">
+                <div class="portfolio-item">
                     <a href="img/beastking-logo-portfolio.jpg"><img src="img/beastking-logo-portfolio-small.jpg"></a>
                 </div>
-                <div class="portfolio-item" data-aos="flip-left" data-aos-duration="2000" data-aos-delay="1000" data-aos-offset="200">
+                <div class="portfolio-item">
                     <a href="img/horizon-logo-portfolio.jpg"><img src="img/horizon-logo-portfolio-small.jpg"></a>
                 </div>
-                <div class="portfolio-item" data-aos="flip-left" data-aos-duration="2000" data-aos-delay="1200" data-aos-offset="200">
+                <div class="portfolio-item">
                     <a href="img/eyeful-studio-logo-portfolio.png"><img src="img/eyeful-studio-logo-portfolio.png"></a>
                 </div>
-                <div class="portfolio-item" data-aos="flip-left" data-aos-duration="2000" data-aos-delay="1400" data-aos-offset="200">
+                <div class="portfolio-item">
                     <a href="img/mms-logo-portfolio-small.jpg"><img src="img/mms-logo-portfolio-small.jpg"></a>
                 </div>
             </div>
         </section>
-        <section class="contact">
+        <section class="contact" id="contact">
             <h2 class="contact-title">Contatti</h2>
             <div class="container">
-                <form name="contact" method="post" action="">
+                <form name="contact" method="post" action="https://formspree.io/mvoajdyd">
                     <div class="contact-upper">
                     <label for="name">Nome</label>
                     <input type="text" name="name" placeholder="Nome" required>
@@ -239,6 +237,12 @@
             <script>
                 AOS.init();
               </script>
+              <script>$(document).ready(function(){
+                $( "a.scrollLink" ).click(function( event ) {
+                    event.preventDefault();
+                    $("html, body").animate({ scrollTop: $($(this).attr("href")).offset().top }, 500);
+                });
+            });</script>
             <!-- <script>function openMenu() {
                 var x = document.getElementById("main-nav");
                 if (x.className === "main-nav") {
