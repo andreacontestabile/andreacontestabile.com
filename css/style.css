@@ -593,6 +593,11 @@ body.comingsoon {
     z-index: 100;
   }
 
+  .showcase .container {
+    display: flex;
+    flex-direction:column;
+  }
+
   .showcase-text {
     width: 100%;
   }
@@ -608,14 +613,14 @@ body.comingsoon {
   }
 
   .showcase-image {
-    right: calc(50% - 100px);
+    order: -1;
+    position: static;
     width: 200px;
-    top: -250px;
-    z-index: -1;
+    margin-bottom: 20px;
   }
 
   .showcase-image img {
-    width: 200px;
+    width: 35vw;
   }
 
   .showcase-image-bg {
@@ -687,6 +692,22 @@ body.comingsoon {
     width: 100%;
     float: none;
   }
+}
+
+@media (max-width: 768px) and (max-height:640px) {
+.header {
+  display: none;
+}
+
+.showcase {
+  top:0;
+  bottom:auto;
+}
+}
+
+@media (max-width: 768px) and (max-height:540px)
+{
+ .main-content {margin-bottom: 40px;}
 }
 
 
